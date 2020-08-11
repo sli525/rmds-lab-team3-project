@@ -1,3 +1,8 @@
+### Running data_preprocessing.py to get up_to_date file
+ 
+ 
+ 
+ 
  ### Covid-19_Risk_Umich_ZJU
 
 - train daily level dataset
