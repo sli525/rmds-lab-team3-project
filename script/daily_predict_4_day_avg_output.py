@@ -162,7 +162,7 @@ out = pd.DataFrame()                            # generate table
 out['ZIP'] = zipcode                            # zip code column
 out['date'] = date_list_new    # date column
 out['Predicted new cases'] = predict_upscale     # predicted new cases columns
-pop = pd.read_csv('LApopulation.csv', index_col = False)  # population data
+pop = pd.read_csv('population.csv', index_col = False)  # population data
 for i in range(out.shape[0]):
   for j in range(pop.shape[0]):
     if (out.at[i,'ZIP'] == pop.at[j,'ZIP']):

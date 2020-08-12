@@ -121,7 +121,7 @@ with requests.Session() as s:
 
 
 #population and income
-population = pd.read_csv('econ_level.csv')
+population = pd.read_csv('population_income.csv')
 population = population.sort_values(by=['place'])
 population = population[['place','population','Population.Density','incomLev']]
 population.columns = ['ZIP','population','Population.Density','incomLev']
