@@ -7,7 +7,7 @@
 
 1. Web Scraping and data preprocessing
 
-`python data _preprocessing.py`
+`python data_preprocessing.py`
 
 2. Train model
 - train daily level dataset to generate an updated checkpoint file
