@@ -51,7 +51,7 @@ with requests.Session() as s:
     Apple_up_to_date = Apple_Mobility_LA.loc[mask]
 
 total = pd.merge(Apple_up_to_date, Google_up_to_date, on='date')
-print(total.head(20))
+
 
 #covid19 confirmed cases
 CSV_URL = "https://raw.githubusercontent.com/datadesk/california-coronavirus-data/master/latimes-place-totals.csv"
@@ -134,7 +134,7 @@ with requests.Session() as s:
     confirm_up_to_date = confirm_up_to_date.loc[mask]
     confirm_up_to_date = confirm_up_to_date.sort_values(by=['date','ZIP'])
     total = pd.merge(confirm_up_to_date, total, on='date')
-    print(total.head(20))
+
 
 #population and income
 population = pd.read_csv('econ_level.csv')
