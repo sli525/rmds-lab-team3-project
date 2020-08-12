@@ -6,6 +6,7 @@
  We have three steps to get a up-to-date output file
 
 1. Web Scraping and data preprocessing
+
 `python data _preprocessing.py`
 
 2. Train model
