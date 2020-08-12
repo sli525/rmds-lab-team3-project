@@ -45,7 +45,7 @@ if args.mode == 'test':
         trainloader, train_x, train_y, validation_x, validation_y, \
         test_x, test_y, train_x_mean, train_x_std, train_y_mean, train_y_std = dataset_generate_daily()
         # path = 'checkpoint_1.tar'
-        path = 'checkpoint_0801.tar'
+        path = 'checkpoint_new.tar'
         test_daily(path, test_x, test_y, train_y_mean, train_y_std)
     if args.type == 'weekly':
         # path = 'checkpoint_2.tar'

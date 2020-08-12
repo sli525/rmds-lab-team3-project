@@ -2,6 +2,7 @@ import torch
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import datetime
 
 day_input = 6
 timelagging = 6
@@ -10,7 +11,7 @@ feature_num = 16+2*(day_input-1)
 
 """     read in data and process, this part is very similar to lstm_1.py    """
 
-filename = "update_dataset.csv"
+filename = "daily.csv"
 zipcode_daily = pd.read_csv(filename, encoding="ISO-8859-1", dtype={'ZIP': str, 'date': str})
 zip = zipcode_daily['ZIP']
 date = zipcode_daily['date']  # we have to preserve the date
@@ -19,6 +20,8 @@ del zipcode_daily['date']
 zipcode_daily = pd.DataFrame(zipcode_daily, dtype=float)  # change the type from 'int' to 'float'
 zipcode_daily['ZIP'] = zip
 zipcode_daily['date'] = date  # add date back
+del zipcode_daily['ave_new6_9after']
+del zipcode_daily['ave_new8_11after']
 
 data_dict = {}  # key: 'zip', value: feature that belong to the key
 for i, zipcode in enumerate(zipcode_daily[:]['ZIP']):
@@ -98,7 +101,7 @@ class Net(torch.nn.Module):
 
 
 model = Net()
-path = 'checkpoint_0801.tar'
+path = 'checkpoint_new.tar'
 # load from file
 checkpoint = torch.load(path)
 model.load_state_dict(checkpoint['net'])
@@ -108,28 +111,80 @@ predict_upscale = upscale(predict)      # original scale output
 
 
 date_list = []
-for i in range(16,32):
-    date_list.append('2020/5/'+str(i))
+for i in range(1,32):
+    if i <=9:
+        date_list.append('2020-05-' + str(0) +str(i))
+    else:
+        date_list.append('2020-05-' +str(i))
 for i in range(1,31):
-    date_list.append('2020/6/' + str(i))
+    if i <=9:
+        date_list.append('2020-06-' + str(0) +str(i))
+    else:
+        date_list.append('2020-06-' +str(i))
 for i in range(1,31):
-    date_list.append('2020/7/' + str(i))
+    if i <=9:
+        date_list.append('2020-07-' + str(0) +str(i))
+    else:
+        date_list.append('2020-07-' +str(i))
+for i in range(1,32):
+    if i <=9:
+        date_list.append('2020-08-' + str(0) +str(i))
+    else:
+        date_list.append('2020-08-' +str(i))
+for i in range(1,31):
+    if i <=9:
+        date_list.append('2020-09-' + str(0) +str(i))
+    else:
+        date_list.append('2020-09-' +str(i))
+for i in range(1,32):
+    if i <=9:
+        date_list.append('2020-10-' + str(0) +str(i))
+    else:
+        date_list.append('2020-10-' +str(i))
+for i in range(1,31):
+    if i <=9:
+        date_list.append('2020-11-' + str(0) +str(i))
+    else:
+        date_list.append('2020-11-' +str(i))
+for i in range(1,32):
+    if i <=9:
+        date_list.append('2020-12-' + str(0) +str(i))
+    else:
+        date_list.append('2020-12-' +str(i))
 
 date_list_new = []
 for date_ in date:
     date_start = date_list[date_list.index(date_)+6]
     date_end = date_list[date_list.index(date_)+9]
-    date_list_new.append(date_start+' - ' + date_end)
+    date_list_new.append(date_start)
 
 out = pd.DataFrame()                            # generate table
 out['ZIP'] = zipcode                            # zip code column
-out['date_start - date_end'] = date_list_new    # date column
+out['date'] = date_list_new    # date column
 out['Predicted new cases'] = predict_upscale     # predicted new cases columns
-pop = pd.read_csv('population.csv', index_col = False)  # population data
+pop = pd.read_csv('LApopulation.csv', index_col = False)  # population data
 for i in range(out.shape[0]):
   for j in range(pop.shape[0]):
-    if (int(out.at[i,'ZIP']) == pop.at[j,'ZIP']):
+    if (out.at[i,'ZIP'] == pop.at[j,'ZIP']):
       out.at[i,'cases/population'] = 10000 * out.at[i,'Predicted new cases'] / pop.at[j,'population']
-
-print(out.head(5))
-out.to_csv('daily_predict_4_day_avg_risk.csv')
+min_score = min(out['cases/population'])
+percent_25 = out['cases/population'].quantile(0.25)
+percent_50 = out['cases/population'].quantile(0.5)
+percent_75 = out['cases/population'].quantile(0.75)
+risk_level = []
+for i in range(out.shape[0]):
+    score = out.iloc[i,-1]
+    if score >= min_score and score < percent_25:
+        level = '0'
+    elif score >= percent_25 and score < percent_50:
+        level = '1'
+    elif score >= percent_50 and score < percent_75:
+        level = '2'
+    else:
+        level = '3'
+    risk_level.append(level)
+out['risk_level'] = risk_level
+output = out[['date','ZIP','cases/population','risk_level']]
+output.columns = ['Timestamp','Region','Risk Score','Risk Level']
+output = output.sort_values(by=['Timestamp','Region'])
+output.to_csv('daily_predict_4_day_avg_risk.csv',index=False)

@@ -20,7 +20,7 @@ class Mydataset(Dataset):
 def dataset_generate_daily():
     """    read data in and clean!     """
 
-    filename = "update_dataset.csv"
+    filename = "daily.csv"
     zipcode_daily = pd.read_csv(filename, encoding="ISO-8859-1", dtype={'ZIP': str, 'date': str})
     zip = zipcode_daily['ZIP']  # 'ZIP' column
     del zipcode_daily['ZIP']  # delete the non-numeric columns

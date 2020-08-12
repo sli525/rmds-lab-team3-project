@@ -25,7 +25,7 @@ with requests.Session() as s:
                                   'grocery_and_pharmacy_percent_change_from_baseline',
                                   'parks_percent_change_from_baseline','transit_stations_percent_change_from_baseline',
                                   'workplaces_percent_change_from_baseline','residential_percent_change_from_baseline']
-    mask = (Google_Mobility_LA['date'] >= '2020-07-27')
+    mask = (Google_Mobility_LA['date'] >= '2020-06-30')
     Google_up_to_date = Google_Mobility_LA.loc[mask]
 
 
@@ -47,10 +47,11 @@ with requests.Session() as s:
     Apple_Mobility_LA = Apple_Mobility.transpose()
     Apple_Mobility_LA = Apple_Mobility_LA.reset_index()
     Apple_Mobility_LA.rename(columns={'index':'date',0: 'driving', 1: 'transit', 2: 'walking'}, inplace=True)
-    mask = (Apple_Mobility_LA['date'] >= '2020-07-27')
+    mask = (Apple_Mobility_LA['date'] >= '2020-06-30')
     Apple_up_to_date = Apple_Mobility_LA.loc[mask]
 
 total = pd.merge(Apple_up_to_date, Google_up_to_date, on='date')
+print(total.head(20))
 
 #covid19 confirmed cases
 CSV_URL = "https://raw.githubusercontent.com/datadesk/california-coronavirus-data/master/latimes-place-totals.csv"
@@ -64,7 +65,7 @@ with requests.Session() as s:
     title = ['date','county','num','ZIP','confirmed cases']
     tot = []
     for row in my_list:
-        if row[1] == 'Los Angeles' and row[0] >= '2020-07-27':
+        if row[1] == 'Los Angeles' and row[0] >= '2020-06-30':
             tot.append(row[0:5])
     confirm_num = pd.DataFrame(tot,columns=title)
     confirm_up_to_date = confirm_num[['date','ZIP','confirmed cases']]
@@ -133,6 +134,7 @@ with requests.Session() as s:
     confirm_up_to_date = confirm_up_to_date.loc[mask]
     confirm_up_to_date = confirm_up_to_date.sort_values(by=['date','ZIP'])
     total = pd.merge(confirm_up_to_date, total, on='date')
+    print(total.head(20))
 
 #population and income
 population = pd.read_csv('econ_level.csv')
@@ -195,5 +197,4 @@ total['ave_new6_9after'] = new6
 total['ave_new7_10after'] = new7
 total['ave_new8_11after'] = new8
 print(total.head(5))
-total = total.sort_values(by='date')
 total.to_csv('daily.csv',index=False)

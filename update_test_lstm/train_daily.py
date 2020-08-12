@@ -19,7 +19,7 @@ def train_daily():
     learning_r = 0.0002
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_r)
     loss_fun = torch.nn.MSELoss()
-    path = 'checkpoint_0801.tar'
+    path = 'checkpoint_new.tar'
 
     """ if you want train your model from a pre-trained model, uncomment the following code. """
     # checkpoint = torch.load(path)
