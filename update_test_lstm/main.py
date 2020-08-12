@@ -11,11 +11,8 @@ If you find anything wrong with the code, please feel free to contact us.
 """
 
 from dataset_daily import dataset_generate_daily
-from dataset_weekly import dataset_generate
 from train_daily import train_daily
-from train_weekly import train_weekly
 from test_daily import test_daily
-from test_weekly import test_weekly
 import matplotlib.pyplot as plt
 import argparse
 
