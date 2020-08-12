@@ -5,28 +5,11 @@ import sys
 
 
 #google
-CSV_URL = 'https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv?cachebust=6ec44f00b5b4f6ad'
-with requests.Session() as s:
-    download = s.get(CSV_URL)
-
-    decoded_content = download.content.decode('utf-8')
-
-    cr = csv.reader(decoded_content.splitlines(), delimiter=',')
-    my_list = list(cr)
-    tot = []
-    for row in my_list:
-        if row[3] == 'Los Angeles County':
-            row.remove('')
-            row.remove('')
-            tot.append(row)
-    Google_Mobility = pd.DataFrame(tot)
-    Google_Mobility_LA = Google_Mobility.iloc[:, [5,6,7, 8, 9, 10, 11]]
-    Google_Mobility_LA.columns = ['date','retail_and_recreation_percent_change_from_baseline',
-                                  'grocery_and_pharmacy_percent_change_from_baseline',
-                                  'parks_percent_change_from_baseline','transit_stations_percent_change_from_baseline',
-                                  'workplaces_percent_change_from_baseline','residential_percent_change_from_baseline']
-    mask = (Google_Mobility_LA['date'] >= '2020-06-30')
-    Google_up_to_date = Google_Mobility_LA.loc[mask]
+Google_Mobility = pd.read_csv('https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv?cachebust=6ec44f00b5b4f6ad')
+Google_Mobility_LA= Google_Mobility[Google_Mobility['sub_region_2']=='Los Angeles County']
+Google_Mobility_LA=Google_Mobility_LA.iloc[:,[7,8,9,10,11,12,13]]
+mask = (Google_Mobility_LA['date'] >= '2020-06-30')
+Google_up_to_date = Google_Mobility_LA.loc[mask]
 
 
 #apple
@@ -51,6 +34,7 @@ with requests.Session() as s:
     Apple_up_to_date = Apple_Mobility_LA.loc[mask]
 
 total = pd.merge(Apple_up_to_date, Google_up_to_date, on='date')
+
 
 
 #covid19 confirmed cases
@@ -143,6 +127,7 @@ population = population[['place','population','Population.Density','incomLev']]
 population.columns = ['ZIP','population','Population.Density','incomLev']
 total = pd.merge(total, population, on='ZIP')
 
+
 case_adjust = []
 new_case_adjust = []
 for index in range(total.shape[0]):
@@ -196,5 +181,4 @@ for k in ave_dict:
 total['ave_new6_9after'] = new6
 total['ave_new7_10after'] = new7
 total['ave_new8_11after'] = new8
-print(total.head(5))
 total.to_csv('daily.csv',index=False)
