@@ -2,12 +2,12 @@
 
 * Team Members: Pushin Huang, Nanbo Li, Shanshan Li
 * Project Manager: Yula Guo
-* Open source project in collaboration with University of Michigan, ZJU Team. Link to their project found [here](https://grmds.org/node/744).*
+* Open source project in collaboration with University of Michigan, ZJU Team. Link to their project found [here](https://grmds.org/node/744).
 
 ## Technical Solutions Description
 
-We built a data modeling pipeline that integrates case count data, mobility data, and social-economic data for forecasting new cases. Next, we converted the data into community level and run a LSTM model, and the detailed modeling process is as follows: 
-We first normalized all features and randomly divided the whole dataset into training set, validation set and test set, respectively. The proportions of the training set, validation set and test set is 70%,15%,15%. We use Adam optimizer to train the LSTM network. The initial learning rate is 0.0003, and we used an adaptive learning rate schedule. Specifically, when validation loss doesn’t decrease for seven epochs, we reduced the learning rate. The number of training epoch is set to 1,500. The training process was early stopped when validation loss doesn’t decrease for 24 epochs. 
+We built a data modeling pipeline that integrates case count data, mobility data, and social-economic data for forecasting new cases. Next, we converted the data into community level and run a LSTM model, and the detailed modeling process is as follows: <br />
+We first normalized all features and randomly divided the whole dataset into training set, validation set and test set, respectively. The proportions of the training set, validation set and test set is 70%,15%,15%. We use Adam optimizer to train the LSTM network. The initial learning rate is 0.0003, and we used an adaptive learning rate schedule. Specifically, when validation loss doesn’t decrease for seven epochs, we reduced the learning rate. The number of training epoch is set to 1,500. The training process was early stopped when validation loss doesn’t decrease for 24 epochs. <br />
 The regional risk score is defined as predicted new cases divided by the population. After getting the risk score, we sorted the risk score and used the binning technique to transform the score into 4 risk level (0,1,2,3) as our final output.	
 
 ## Setup
@@ -48,7 +48,7 @@ Data Overview - Key Features
 
 ## Output
 
-Output file: ** [risk_level.csv](https://github.com/sli525/rmds-lab-team3-project/blob/master/output%20file/risk_level.csv)
+Output file: [risk_level.csv](https://github.com/sli525/rmds-lab-team3-project/blob/master/output%20file/risk_level.csv)
 
 **Timestamp:**
 - Date of newly updated data
