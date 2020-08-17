@@ -4,10 +4,14 @@ import pandas as pd
 import sys
 
 class Community:
+
+    '''Represents preprocessing for each data sources'''
+
   def __init__(self, url):
     self.url = url
 
   def google_func(self):
+    ''' Extract target data from google mobility file'''
     Google_Mobility = pd.read_csv(self.url)
     Google_Mobility_LA= Google_Mobility[Google_Mobility['sub_region_2']=='Los Angeles County']
     Google_Mobility_LA=Google_Mobility_LA.iloc[:,[7,8,9,10,11,12,13]]
@@ -16,6 +20,7 @@ class Community:
     return Google_up_to_date
 
   def apple_func(self):
+    '''Extract target data from apple mobility file'''
     CSV_URL = self.url
     with requests.Session() as s:
         download = s.get(CSV_URL)
@@ -38,6 +43,7 @@ class Community:
     return Apple_up_to_date
 
   def covid_func(self):
+    '''Extract confirmed cases'''
     CSV_URL_1 = self.url
     with requests.Session() as s:
         download = s.get(CSV_URL_1)
@@ -119,6 +125,7 @@ class Community:
     return confirm_up_to_date
 
   def population_func(self):
+    '''Import population and income level information to input file'''
     population = pd.read_csv(self.url)
     population = population.sort_values(by=['place'])
     population = population[['place','population','Population.Density','incomLev']]
@@ -126,6 +133,7 @@ class Community:
     return population
 
 def combine_table(t1,t2,column):
+    '''combine table'''
     table = pd.merge(t1,t2, on=column)
     return table
 
@@ -145,10 +153,12 @@ popul = population_data.population_func()
 total_table = combine_table(total_table, popul,'ZIP')
 
 class update:
+    '''add new columns to input file'''
     def __init__(self, table):
         self.table = table
 
     def new_case(self):
+        '''add new confirmed cases column'''
         total = self.table
         case_adjust = []
         new_case_adjust = []
@@ -163,6 +173,7 @@ class update:
         return tot
 
     def future_case(self):
+        ''' add future cases column'''
         total = self.table
         ave_dict = {}
         tot_list = []

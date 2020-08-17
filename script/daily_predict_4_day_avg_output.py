@@ -10,6 +10,7 @@ average_num = 4
 feature_num = 16+2*(day_input-1)
 
 class process_data:
+    '''Process input file '''
     def __init__(self, input):
         self.input = input
 
@@ -180,11 +181,14 @@ for i in range(out.shape[0]):
   for j in range(pop.shape[0]):
     if (out.at[i,'ZIP'] == pop.at[j,'ZIP']):
       out.at[i,'cases/population'] = 10000 * out.at[i,'Predicted new cases'] / pop.at[j,'population']
+#get percentail for predicted risk score
 min_score = min(out['cases/population'])
 percent_25 = out['cases/population'].quantile(0.25)
 percent_50 = out['cases/population'].quantile(0.5)
 percent_75 = out['cases/population'].quantile(0.75)
 risk_level = []
+
+#define risk level
 for i in range(out.shape[0]):
     score = out.iloc[i,-1]
     if score >= min_score and score < percent_25:
@@ -196,9 +200,9 @@ for i in range(out.shape[0]):
     else:
         level = '3'
     risk_level.append(level)
-out['risk_level'] = risk_level
+out['risk_level'] = risk_level # add risk_level column to output file
 output = out[['date','ZIP','cases/population','risk_level']]
-output.columns = ['Timestamp','Region','Risk Score','Risk Level']
+output.columns = ['Timestamp','Region','Risk Score','Risk Level'] #rename the columns of table
 output = output.sort_values(by=['Timestamp','Region'])
 output.to_csv('daily_predict_4_day_avg_risk.csv',index=False)
 
