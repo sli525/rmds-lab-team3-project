@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-08-13T00:14:49.577Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="rRNkHtF_c4kOi_ncyMFp" version="13.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2020-08-19T21:30:19.904Z" agent="5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36" etag="OIQRULtX8fiocaGNzAyp" version="13.6.2" type="github">
   <diagram id="n8BWnJe9wmHFYGAis24Z" name="Page-1">
-    <mxGraphModel dx="872" dy="428" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="800" dy="428" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,10 +17,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cCQW8uKocdd_1a3b0VfQ-4" value="DATA - 1&lt;br&gt;COVID-19 case count by neighborhood" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="cCQW8uKocdd_1a3b0VfQ-4" value="DATA - 1&lt;br&gt;COVID-19 case count by neighborhood" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="50" y="30" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="cCQW8uKocdd_1a3b0VfQ-6" value="DATA - 3&lt;br&gt;population, density and income level" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="cCQW8uKocdd_1a3b0VfQ-6" value="DATA - 3&lt;br&gt;population, density and income level" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;" parent="1" vertex="1">
           <mxGeometry x="546" y="30" width="129" height="60" as="geometry" />
         </mxCell>
         <mxCell id="cCQW8uKocdd_1a3b0VfQ-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="cCQW8uKocdd_1a3b0VfQ-12" edge="1">
@@ -32,7 +32,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cCQW8uKocdd_1a3b0VfQ-12" value="Data pipeline for three data sources and get input file&amp;nbsp;&lt;br&gt;&lt;b&gt;data_preprocessing.py&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="cCQW8uKocdd_1a3b0VfQ-12" value="Data pipeline for three data sources and get input file&amp;nbsp;&lt;br&gt;&lt;b&gt;data_preprocessing.py&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="280" y="410" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="1IQ4xqfNWhl-1mDxlvzx-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
@@ -41,7 +41,7 @@
             <mxPoint x="610" y="200" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1IQ4xqfNWhl-1mDxlvzx-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.007;entryY=0.414;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1" target="cCQW8uKocdd_1a3b0VfQ-12">
+        <mxCell id="1IQ4xqfNWhl-1mDxlvzx-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.007;entryY=0.414;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="cCQW8uKocdd_1a3b0VfQ-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="610" y="310" as="sourcePoint" />
             <mxPoint x="430" y="440" as="targetPoint" />
@@ -50,7 +50,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-7" value="Select only Los Angeles county in column &#39; county&#39;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-7" value="Select only Los Angeles county in column &#39; county&#39;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="50" y="112" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="cnYKGENYZsOeAPs4FQzv-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
@@ -63,7 +63,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-16" value="Filter community level by matching &#39;place&#39; column with list of cities and towns within Los Angeles area" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-16" value="Filter community level by matching &#39;place&#39; column with list of cities and towns within Los Angeles area" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="50" y="174" width="120" height="96" as="geometry" />
         </mxCell>
         <mxCell id="cnYKGENYZsOeAPs4FQzv-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
@@ -76,7 +76,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-21" value="Set automatic data download and read pipeline&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-21" value="Set automatic data download and read pipeline&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="50" y="290" width="120" height="44" as="geometry" />
         </mxCell>
         <mxCell id="cnYKGENYZsOeAPs4FQzv-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
@@ -89,7 +89,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-28" value="Narrow down the data: Global -&amp;gt; US -&amp;gt; Los Angeles (Google daily done)" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-28" value="Narrow down the data: Global -&amp;gt; US -&amp;gt; Los Angeles (Google daily done)" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="360" y="112" width="120" height="58" as="geometry" />
         </mxCell>
         <mxCell id="cnYKGENYZsOeAPs4FQzv-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="cnYKGENYZsOeAPs4FQzv-32" edge="1">
@@ -102,7 +102,7 @@
         <mxCell id="6SXxk8cz07H6yEZXP1Uz-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="cnYKGENYZsOeAPs4FQzv-30" target="cnYKGENYZsOeAPs4FQzv-32" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-30" value="Pivot the table (Apple daily done)" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-30" value="Pivot the table (Apple daily done)" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="216" y="200" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="6SXxk8cz07H6yEZXP1Uz-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="cnYKGENYZsOeAPs4FQzv-32" target="cCQW8uKocdd_1a3b0VfQ-12" edge="1">
@@ -114,7 +114,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-32" value="Calculate 7-day rolling average (Google &amp;amp; Apple weekly done)" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-32" value="Calculate 7-day rolling average (Google &amp;amp; Apple weekly done)" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="360" y="280" width="120" height="54" as="geometry" />
         </mxCell>
         <mxCell id="cnYKGENYZsOeAPs4FQzv-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
@@ -127,10 +127,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-34" value="Combine income dataset and population dataset by common zipcode" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-34" value="Combine income dataset and population dataset by common zipcode" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="550.5" y="112" width="120" height="58" as="geometry" />
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-36" value="Using geopy in python to convert zipcode to community&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-36" value="Using geopy in python to convert zipcode to community&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="550.5" y="202" width="120" height="58" as="geometry" />
         </mxCell>
         <mxCell id="cnYKGENYZsOeAPs4FQzv-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
@@ -143,7 +143,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-38" value="Choosing target community&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-38" value="Choosing target community&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="550.5" y="300" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="cnYKGENYZsOeAPs4FQzv-40" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;rounded=0;entryX=-0.029;entryY=0.371;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cnYKGENYZsOeAPs4FQzv-21" target="cCQW8uKocdd_1a3b0VfQ-12" edge="1">
@@ -161,22 +161,22 @@
             <mxPoint x="529.5" y="612" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cCQW8uKocdd_1a3b0VfQ-27" value="&lt;h1&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;output details&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;time_stamp (Daily)&lt;/p&gt;&lt;p&gt;&lt;span&gt;&amp;nbsp;region&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;risk_socre&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;risk_level&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;align=center;" parent="1" vertex="1">
+        <mxCell id="cCQW8uKocdd_1a3b0VfQ-27" value="&lt;h1&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;output details&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;time_stamp (Daily)&lt;/p&gt;&lt;p&gt;&lt;span&gt;&amp;nbsp;region&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;risk_socre&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;risk_level&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="240" y="690" width="190" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-42" value="Tune parameter for lstm model&lt;br&gt;&lt;b&gt;parameter_daily.py&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-42" value="Tune parameter for lstm model&lt;br&gt;&lt;b&gt;parameter_daily.py&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="290" y="522" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-44" value="Generate a new checkpoint file&lt;br&gt;&lt;b&gt;train_daily.py&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-44" value="Generate a new checkpoint file&lt;br&gt;&lt;b&gt;train_daily.py&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="470" y="522" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="cnYKGENYZsOeAPs4FQzv-45" value="&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none&quot;&gt;generate risk scores &amp;amp; categorize as 4 levels (0,1,2,3) by using percentile rank&lt;br&gt;&lt;b&gt;daily_predict_4_day&lt;br&gt;_avg_output.py&lt;/b&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+        <mxCell id="cnYKGENYZsOeAPs4FQzv-45" value="&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none&quot;&gt;generate risk scores &amp;amp; categorize as 4 levels (0,1,2,3) by using percentile rank&lt;br&gt;&lt;b&gt;daily_predict_4_day&lt;br&gt;_avg_output.py&lt;/b&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="470" y="710" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="6SXxk8cz07H6yEZXP1Uz-1" value="Data - 2.1&amp;nbsp;&lt;br&gt;Mobility data: &lt;br&gt;Google" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="6SXxk8cz07H6yEZXP1Uz-1" value="Data - 2.1&amp;nbsp;&lt;br&gt;Mobility data: &lt;br&gt;Google" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="216" y="30" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="6SXxk8cz07H6yEZXP1Uz-2" value="Narrow down the data: Global -&amp;gt; US -&amp;gt; Los Angeles&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="6SXxk8cz07H6yEZXP1Uz-2" value="Narrow down the data: Global -&amp;gt; US -&amp;gt; Los Angeles&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="216" y="112" width="120" height="58" as="geometry" />
         </mxCell>
         <mxCell id="6SXxk8cz07H6yEZXP1Uz-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
@@ -199,26 +199,44 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="BxA966MDy9rOyqfx5sMN-2" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+        <mxCell id="BxA966MDy9rOyqfx5sMN-2" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="410" y="551.5" as="sourcePoint" />
             <mxPoint x="470" y="552" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BxA966MDy9rOyqfx5sMN-3" value="Run model for train and test dataset&lt;br&gt;&lt;b&gt;main.py&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+        <mxCell id="BxA966MDy9rOyqfx5sMN-3" value="Run model for train and test dataset&lt;br&gt;&lt;b&gt;main.py&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="470" y="612" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BxA966MDy9rOyqfx5sMN-4" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="cnYKGENYZsOeAPs4FQzv-45">
+        <mxCell id="BxA966MDy9rOyqfx5sMN-4" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="cnYKGENYZsOeAPs4FQzv-45" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="529.5" y="672" as="sourcePoint" />
             <mxPoint x="529.5" y="702" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BxA966MDy9rOyqfx5sMN-5" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+        <mxCell id="BxA966MDy9rOyqfx5sMN-5" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="469" y="760" as="sourcePoint" />
             <mxPoint x="430" y="760" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="0IWTeZQR44zKmIkxoOtI-7" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="30" y="472" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="0IWTeZQR44zKmIkxoOtI-1" value="&lt;div&gt;&lt;span&gt;update frequency&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=center;" vertex="1" parent="0IWTeZQR44zKmIkxoOtI-7">
+          <mxGeometry width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="0IWTeZQR44zKmIkxoOtI-3" value="one time process" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;" vertex="1" parent="0IWTeZQR44zKmIkxoOtI-7">
+          <mxGeometry x="40" y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0IWTeZQR44zKmIkxoOtI-4" value="process step" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="0IWTeZQR44zKmIkxoOtI-7">
+          <mxGeometry x="40" y="160" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0IWTeZQR44zKmIkxoOtI-5" value="weekly" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="0IWTeZQR44zKmIkxoOtI-7">
+          <mxGeometry x="40" y="80" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0IWTeZQR44zKmIkxoOtI-6" value="daily update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="0IWTeZQR44zKmIkxoOtI-7">
+          <mxGeometry x="40" y="40" width="120" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
