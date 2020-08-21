@@ -135,7 +135,7 @@ for i in range(1,31):
         date_list.append('2020-06-' + str(0) +str(i))
     else:
         date_list.append('2020-06-' +str(i))
-for i in range(1,31):
+for i in range(1,32):
     if i <=9:
         date_list.append('2020-07-' + str(0) +str(i))
     else:

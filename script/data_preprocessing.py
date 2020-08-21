@@ -5,8 +5,6 @@ import sys
 
 class Community:
 
-    '''Represents preprocessing for each data sources'''
-
   def __init__(self, url):
     self.url = url
 
@@ -140,7 +138,7 @@ def combine_table(t1,t2,column):
 google_data = Community('https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv?cachebust=6ec44f00b5b4f6ad')
 google = google_data.google_func()
 
-apple_data = Community('https://covid19-static.cdn-apple.com/covid19-mobility-data/2014HotfixDev8/v3/en-us/applemobilitytrends-2020-08-08.csv')
+apple_data = Community('https://covid19-static.cdn-apple.com/covid19-mobility-data/2015HotfixDev5/v3/en-us/applemobilitytrends-2020-08-19.csv')
 apple = apple_data.apple_func()
 total_table = combine_table(apple, google,'date')
 
