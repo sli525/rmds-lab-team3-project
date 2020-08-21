@@ -2,6 +2,9 @@ import csv
 import requests
 import pandas as pd
 import sys
+from bs4 import BeautifulSoup
+from selenium  import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 class Community:
 
@@ -138,7 +141,16 @@ def combine_table(t1,t2,column):
 google_data = Community('https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv?cachebust=6ec44f00b5b4f6ad')
 google = google_data.google_func()
 
-apple_data = Community('https://covid19-static.cdn-apple.com/covid19-mobility-data/2015HotfixDev5/v3/en-us/applemobilitytrends-2020-08-19.csv')
+url = 'https://covid19.apple.com/mobility'
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.get(url)
+soup = BeautifulSoup(driver.page_source,"html.parser")
+item = soup.find('body')
+div = item.find("div", {"class": "download-button-container"})
+link = div.find('a')
+link1 = link['href']
+
+apple_data = Community(link1)
 apple = apple_data.apple_func()
 total_table = combine_table(apple, google,'date')
 
