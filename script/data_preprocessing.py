@@ -16,7 +16,7 @@ class Community:
     Google_Mobility = pd.read_csv(self.url)
     Google_Mobility_LA= Google_Mobility[Google_Mobility['sub_region_2']=='Los Angeles County']
     Google_Mobility_LA=Google_Mobility_LA.iloc[:,[7,8,9,10,11,12,13]]
-    mask = (Google_Mobility_LA['date'] >= '2020-03-23')
+    mask = (Google_Mobility_LA['date'] >= '2020-04-30')
     Google_up_to_date = Google_Mobility_LA.loc[mask]
     return Google_up_to_date
 
@@ -39,7 +39,7 @@ class Community:
         Apple_Mobility_LA = Apple_Mobility.transpose()
         Apple_Mobility_LA = Apple_Mobility_LA.reset_index()
         Apple_Mobility_LA.rename(columns={'index':'date',0: 'driving', 1: 'transit', 2: 'walking'}, inplace=True)
-        mask = (Apple_Mobility_LA['date'] >= '2020-03-23')
+        mask = (Apple_Mobility_LA['date'] >= '2020-04-30')
         Apple_up_to_date = Apple_Mobility_LA.loc[mask]
     return Apple_up_to_date
 
@@ -56,7 +56,7 @@ class Community:
         title = ['date','county','num','ZIP','confirmed cases']
         tot = []
         for row in my_list:
-            if row[1] == 'Los Angeles' and row[0] >= '2020-03-23':
+            if row[1] == 'Los Angeles' and row[0] >= '2020-04-30':
                 tot.append(row[0:5])
         confirm_num = pd.DataFrame(tot,columns=title)
         confirm_up_to_date = confirm_num[['date','ZIP','confirmed cases']]
