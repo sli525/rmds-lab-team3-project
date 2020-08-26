@@ -127,6 +127,16 @@ predict_upscale = upscale(predict)      # original scale output
 date_list = []
 for i in range(1,32):
     if i <=9:
+        date_list.append('2020-03-' + str(0) +str(i))
+    else:
+        date_list.append('2020-03-' +str(i))
+for i in range(1,31):
+    if i <=9:
+        date_list.append('2020-04-' + str(0) +str(i))
+    else:
+        date_list.append('2020-04-' +str(i))
+for i in range(1,32):
+    if i <=9:
         date_list.append('2020-05-' + str(0) +str(i))
     else:
         date_list.append('2020-05-' +str(i))
